@@ -1,13 +1,10 @@
-import readlineSync from "readline-sync";
+import PromptSync from "prompt-sync";
+const prompt = PromptSync();
 
-// Entrada de dados
-let preco: number = parseFloat(readlineSync.question("Preco unitario do produto: "));
-let quantidade: number = parseInt(readlineSync.question("Quantidade comprada: "));
-let dinheiroRecebido: number = parseFloat(readlineSync.question("Dinheiro recebido: "));
+const preco = Number(prompt("valor do produto: "));
+const qtd = Number(prompt("quantidade: "));
+const vp = Number(prompt("Dinheiro recebido: "));
+const vt = preco * qtd;
+const troco = vp - vt;
 
-// Calcular total e troco
-let total: number = preco * quantidade;
-let troco: number = dinheiroRecebido - total;
-
-// Saída
-console.log("TROCO = " + troco.toFixed(2));
+console.log(`TROCO = ${troco}`);

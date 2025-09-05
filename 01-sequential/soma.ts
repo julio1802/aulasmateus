@@ -1,11 +1,8 @@
-import * as readlineSync from 'readline-sync';
+import PromptSync from "prompt-sync";
+const prompt = PromptSync();
 
-// Ler os valores de X e Y
-let x: number = parseInt(readlineSync.question("Digite o valor de X: "));
-let y: number = parseInt(readlineSync.question("Digite o valor de Y: "));
+const x = Number(prompt("valor de X: "));
+const y = Number(prompt("Valor de Y: "));
+const soma = x + y;
 
-// Calcular a soma
-let soma: number = x + y;
-
-// Mostrar o resultado
-console.log("SOMA = " + soma);
+console.log(`SOMA = ${soma}`);
